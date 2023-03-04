@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+data:
+  data_file_path: src/main/resources/data.json
+
+schedule:
+  cron: 0 0/2 * * * * # run at every 2 minute
+
+logging:
+  pattern:
+    file: "%m%n"
