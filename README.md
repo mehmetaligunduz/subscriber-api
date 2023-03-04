@@ -10,7 +10,7 @@ data:
   data_file_path: src/main/resources/data.json
 
 schedule:
-  cron: 0 0/30 * * * * # run at every 30 minute
+  cron: 0 0/30 * * * * #run at every 30 minute
 
 logging:
   pattern:
