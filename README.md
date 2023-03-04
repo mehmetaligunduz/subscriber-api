@@ -74,5 +74,5 @@ curl --location --request DELETE 'localhost:8080/subscriber' \
 # Nasıl Çalışır?
 
 # Postman Collection
-Yukarıda detayları paylaşılan REST ve SOAP servislere ait postman collection oluşturulmuştur. **Postman Collection** bağlantısından ulaşabilirsiniz. Collectionları Postman'e import edip request-response yapısını inceleyebilirsiniz.
-[Postman Collection](https://api.postman.com/collections/21282248-61b36244-6e42-45d5-9867-686b6f04d275?access_key=PMAT-01GTQ7HDYZA55CJY7DKPBE3EJP)
+Yukarıda detayları paylaşılan REST ve SOAP servislere ait postman collection oluşturulmuştur. **[Postman Collection](https://api.postman.com/collections/21282248-61b36244-6e42-45d5-9867-686b6f04d275?access_key=PMAT-01GTQ7HDYZA55CJY7DKPBE3EJP)** bağlantısından ulaşabilirsiniz. Collectionları Postman'e import edip request-response yapısını inceleyebilirsiniz.
+
