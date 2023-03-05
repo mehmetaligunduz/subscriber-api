@@ -17,10 +17,12 @@ public class LoggingConfiguration {
 
     @Bean
     public Logger logger() throws IOException {
+
         FileHandler fileHandler = new FileHandler(FILE_NAME, true);
         logger.addHandler(fileHandler);
         fileHandler.setFormatter(new SimpleFormatter());
         return logger;
+        
     }
 
 }

@@ -19,15 +19,19 @@ public class CachingConfiguration {
 
     @Bean
     public CacheManager cacheManager() {
+
         SimpleCacheManager cacheManager = new SimpleCacheManager();
         cacheManager.setCaches(List.of(
                 new ConcurrentMapCache(CACHE_NAME)));
         return cacheManager;
+
     }
 
     @Bean
     public Cache cache() {
+
         return cacheManager().getCache(CACHE_NAME);
+
     }
 
 }
