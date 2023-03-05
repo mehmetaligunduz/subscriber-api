@@ -1,14 +1,14 @@
 package com.mag.studycase.model.request;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
-import jakarta.validation.constraints.NotNull;
 
 @Getter
 @Setter
 public class DeleteSubscriberRequest {
 
-    @NotNull
+    @NotBlank
     private String id;
 
     @Override
