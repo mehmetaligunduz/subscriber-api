@@ -40,7 +40,7 @@ public class PersistenceServiceImpl implements PersistenceService {
 
             final SubscriberListEntity subscriberListEntity = objectMapper.readValue(file, SubscriberListEntity.class);
 
-            cacheService.initializeCache(subscriberListEntity.getSubscribers());
+            cacheService.init(subscriberListEntity.getSubscribers());
 
             log.info("Cache initialization completed successfully");
 
@@ -57,7 +57,7 @@ public class PersistenceServiceImpl implements PersistenceService {
     public void storeCache() {
         try {
 
-            SubscriberListEntity cache = cacheService.getCache();
+            SubscriberListEntity cache = cacheService.getAll();
             objectMapper.writeValue(file, cache);
 
             log.info("Cache storing completed successfully");

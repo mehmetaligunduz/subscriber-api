@@ -53,21 +53,14 @@ public class CacheServiceImpl implements CacheService {
     }
 
     @Override
-    public SubscriberEntity getSubscriber(String subscriberId) {
+    public void init(List<SubscriberEntity> list) {
 
-        return (SubscriberEntity) cache.get(subscriberId);
-
-    }
-
-    @Override
-    public void initializeCache(List<SubscriberEntity> subscriberEntityList) {
-
-        subscriberEntityList.forEach(this::put);
+        list.forEach(this::put);
 
     }
 
     @Override
-    public SubscriberListEntity getCache() {
+    public SubscriberListEntity getAll() {
 
         ConcurrentMap<Object, Object> nativeCache = (ConcurrentMap<Object, Object>) cache.getNativeCache();
         Set<Object> keys = nativeCache.keySet();
@@ -83,7 +76,6 @@ public class CacheServiceImpl implements CacheService {
         return subscriberListEntity;
 
     }
-
 
     private boolean isNotExist(String id) {
 
