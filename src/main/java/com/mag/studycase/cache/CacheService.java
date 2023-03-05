@@ -13,10 +13,8 @@ public interface CacheService {
 
     void delete(String subscriberId);
 
-    SubscriberEntity getSubscriber(String subscriberId);
+    void init(List<SubscriberEntity> list);
 
-    void initializeCache(List<SubscriberEntity> subscriberEntityList);
-
-     SubscriberListEntity getCache();
+     SubscriberListEntity getAll();
 
 }

@@ -63,11 +63,12 @@ public class SubscriberServiceImpl implements SubscriberService {
     @Override
     public SubscriberListResponse getAllSubscribers() {
 
-        final SubscriberListEntity allSubscriber = cacheService.getCache();
+        loggingService.addLogGetAllSubscriber();
+
+        final SubscriberListEntity allSubscriber = cacheService.getAll();
 
         SubscriberListResponse subscriberListResponse = new SubscriberListResponse();
         List<Subscriber> subscriberList = subscriberListResponse.getSubscriber();
-
 
         allSubscriber.getSubscribers().forEach(subscriber -> {
 
