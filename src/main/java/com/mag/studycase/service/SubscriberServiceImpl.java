@@ -1,4 +1,4 @@
-package com.mag.studycase.services;
+package com.mag.studycase.service;
 
 import com.mag.studycase.cache.CacheService;
 import com.mag.studycase.entity.SubscriberEntity;

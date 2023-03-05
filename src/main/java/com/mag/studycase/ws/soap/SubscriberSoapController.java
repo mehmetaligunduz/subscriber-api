@@ -1,7 +1,7 @@
 package com.mag.studycase.ws.soap;
 
 import com.mag.studycase.model.soap.SubscriberListResponse;
-import com.mag.studycase.services.SubscriberService;
+import com.mag.studycase.service.SubscriberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
