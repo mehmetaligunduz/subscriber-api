@@ -5,7 +5,7 @@ import com.mag.studycase.model.request.AddSubscriberRequest;
 import com.mag.studycase.model.request.UpdateSubscriberRequest;
 import com.mag.studycase.model.response.AddSubscriberResponse;
 import com.mag.studycase.model.response.UpdateSubscriberResponse;
-import com.mag.studycase.services.SubscriberService;
+import com.mag.studycase.service.SubscriberService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
