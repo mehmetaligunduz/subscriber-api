@@ -14,3 +14,5 @@ Mar 04, 2023 8:19:43 PM com.mag.studycase.logging.LoggingServiceImpl addLog
 INFO: 04-03-2023 20:19:43 /subscriber[POST] id = 011, name = gündüz, msisdn = AAAA
 Mar 04, 2023 8:19:47 PM com.mag.studycase.logging.LoggingServiceImpl addLog
 INFO: 04-03-2023 20:19:47 /subscriber[POST] id = 019, name = gündüz, msisdn = AAAA
+Mar 05, 2023 5:29:29 PM com.mag.studycase.logging.LoggingServiceImpl addLogGetAllSubscriber
+INFO: 05-03-2023 17:29:29 /getAllSubscribers
