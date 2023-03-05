@@ -2,14 +2,19 @@ package com.mag.studycase.services;
 
 import com.mag.studycase.cache.CacheService;
 import com.mag.studycase.entity.SubscriberEntity;
+import com.mag.studycase.entity.SubscriberListEntity;
 import com.mag.studycase.logging.LoggingService;
 import com.mag.studycase.model.request.AddSubscriberRequest;
 import com.mag.studycase.model.request.DeleteSubscriberRequest;
 import com.mag.studycase.model.request.UpdateSubscriberRequest;
 import com.mag.studycase.model.response.AddSubscriberResponse;
 import com.mag.studycase.model.response.UpdateSubscriberResponse;
+import com.mag.studycase.model.soap.Subscriber;
+import com.mag.studycase.model.soap.SubscriberListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -56,9 +61,27 @@ public class SubscriberServiceImpl implements SubscriberService {
     }
 
     @Override
-    public SubscriberEntity getSubscriber(String subscriberId) {
+    public SubscriberListResponse getAllSubscribers() {
 
-        return cacheService.getSubscriber(subscriberId);
+        final SubscriberListEntity allSubscriber = cacheService.getCache();
+
+        SubscriberListResponse subscriberListResponse = new SubscriberListResponse();
+        List<Subscriber> subscriberList = subscriberListResponse.getSubscriber();
+
+
+        allSubscriber.getSubscribers().forEach(subscriber -> {
+
+            Subscriber subscriberTemp = new Subscriber();
+
+            subscriberTemp.setId(subscriber.getId());
+            subscriberTemp.setName(subscriber.getName());
+            subscriberTemp.setMsisdn(subscriber.getMsisdn());
+
+            subscriberList.add(subscriberTemp);
+
+        });
+        
+        return subscriberListResponse;
 
     }
 

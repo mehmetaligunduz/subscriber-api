@@ -1,11 +1,11 @@
 package com.mag.studycase.services;
 
-import com.mag.studycase.entity.SubscriberEntity;
 import com.mag.studycase.model.request.AddSubscriberRequest;
 import com.mag.studycase.model.request.DeleteSubscriberRequest;
 import com.mag.studycase.model.request.UpdateSubscriberRequest;
 import com.mag.studycase.model.response.AddSubscriberResponse;
 import com.mag.studycase.model.response.UpdateSubscriberResponse;
+import com.mag.studycase.model.soap.SubscriberListResponse;
 
 public interface SubscriberService {
 
@@ -15,6 +15,6 @@ public interface SubscriberService {
 
     void deleteSubscriber(DeleteSubscriberRequest request);
 
-    SubscriberEntity getSubscriber(String subscriberId);
+    SubscriberListResponse getAllSubscribers();
 
 }
