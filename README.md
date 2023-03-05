@@ -5,6 +5,8 @@ Bu proje abone(subscriber) bilgilerinin in memory cache üzerinde tutulup ilgili
 ```
 server:
   port: 8080
+  error:
+    include-message: always
 
 data:
   data_file_path: src/main/resources/data.json
@@ -15,10 +17,13 @@ schedule:
 logging:
   pattern:
     file: "%m%n"
-
 ```
 
 Uygulamada default olarak 30 dakikada bir cache üzerindeki bilgiler ```src/main/resources/data.json``` dosyasına yazılmaktadır. Verileri kaydetme aralığında yada verilerin okunup, yazılacağı dosyada değişiklik yapılmak istendiğinde ilgili değişiklikler **application.yaml** üzerinden yapılmalıdır.
+
+**Uygulama Özellikleri**
++ Java Version: java 17 2021-09-14 LTS
++ Build Tool: Maven
 
 ## Rest Services ##
 + **/subscriber ```POST```**
@@ -39,7 +44,7 @@ curl --location 'localhost:8080/subscriber' \
 
 + **/subscriber ```PUT```**
 
-/subscriber enpointine yapılacak ```PUT``` isteklerinde subscriber güncelleme işlemi gerçekleştirilmektedir.İstek gövdesinde id, name, msisdn değerleri alınmaktadır. Güncellenmek istenilen id ile kullanıcı bulunamaz ise **SubscriberNotFoundException** hatası fırlatılmaktadır.
+/subscriber enpointine yapılacak ```PUT``` isteklerinde subscriber güncelleme işlemi gerçekleştirilmektedir. İstek gövdesinde id, name, msisdn değerleri alınmaktadır. Güncellenmek istenilen id ile kullanıcı bulunamaz ise **SubscriberNotFoundException** hatası fırlatılmaktadır.
 
 **cURL**
 ```
@@ -68,10 +73,31 @@ curl --location --request DELETE 'localhost:8080/subscriber' \
 ```
 
 ## SOAP Services ##
-+ **/getAllSubscribers**
-+ **/getSubscriberById/{Id}**
++ **/getAllSubscribers ```POST```**
+
+/getAllSubscribers enpointine yapılacak ```POST``` isteklerinde cache'te bulunan tüm abone kullanıcıları listeleme işlemi gerçekleştirilmektedir.
+
+**cURL**
+```
+curl --location 'http://localhost:8080/getAllSubscribers' \
+--header 'Content-Type: text/xml' \
+--data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:us="http://mag.com/studycase/model/soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <us:SubscribersRequest/>
+    </soapenv:Body>
+</soapenv:Envelope>'
+```
 
 # Nasıl Çalışır?
+
++ Projeyi localinize indirin(```git clone https://github.com/mehmetaligunduz/subscriber-study-case.git```)
++ Projeyi herhangi bir IDE(IntelliJ, Eclipse, NetBeans v.s.) ile açın IntelliJ tavsiye edilir.
++ ```mvn clean install``` komutunu terminal sekmesinden yada maven toolbardan çalıştırın. 
+
+Maven ilgili bağımlılıkları indirip derlemeyi başarılı bir şekilde gerçekleştirdikten sonra uygulamayı run edebilirsiniz.
+
 
 # Postman Collection
 Yukarıda detayları paylaşılan REST ve SOAP servislere ait postman collection oluşturulmuştur. **[Postman Collection](https://api.postman.com/collections/21282248-61b36244-6e42-45d5-9867-686b6f04d275?access_key=PMAT-01GTQ7HDYZA55CJY7DKPBE3EJP)** bağlantısından ulaşabilirsiniz. Collectionları Postman'e import edip request-response yapısını inceleyebilirsiniz.
