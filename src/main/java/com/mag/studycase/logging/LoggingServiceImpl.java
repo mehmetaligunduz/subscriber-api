@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.logging.Logger;
 
 @Service
@@ -31,7 +30,6 @@ public class LoggingServiceImpl implements LoggingService {
         String message = String.format("%s /getSubscriberById is = %s", getCurrentDateTime(), id);
         logger.info(message);
     }
-
 
     private String getCurrentDateTime() {
         return LocalDateTime

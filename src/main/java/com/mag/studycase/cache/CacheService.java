@@ -15,6 +15,6 @@ public interface CacheService {
 
     void init(List<SubscriberEntity> list);
 
-     SubscriberListEntity getAll();
+    SubscriberListEntity getAll();
 
 }
