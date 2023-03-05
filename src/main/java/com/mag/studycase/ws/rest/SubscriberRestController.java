@@ -8,7 +8,6 @@ import com.mag.studycase.model.response.UpdateSubscriberResponse;
 import com.mag.studycase.services.SubscriberService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,7 @@ import java.io.IOException;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/subscriber")
-public class SubscriberController {
+public class SubscriberRestController {
 
     private final SubscriberService subscriberService;
 
