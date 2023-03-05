@@ -1,7 +1,7 @@
 package com.mag.studycase.model.request;
 
 import com.mag.studycase.entity.SubscriberEntity;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Getter
@@ -10,13 +10,13 @@ import lombok.*;
 @NoArgsConstructor
 public class AddSubscriberRequest {
 
-    @NotNull
+    @NotBlank
     private String id;
 
-    @NotNull
+    @NotBlank
     private String name;
 
-    @NotNull
+    @NotBlank
     private String msisdn;
 
     @Override
