@@ -96,7 +96,7 @@ curl --location 'http://localhost:8080/getAllSubscribers' \
 + Projeyi herhangi bir IDE(IntelliJ, Eclipse, NetBeans v.s.) ile açın IntelliJ tavsiye edilir.
 + ```mvn clean install``` komutunu terminal sekmesinden yada maven toolbardan çalıştırın. 
 
-Maven ilgili bağımlılıkları indirip derlemeyi başarılı bir şekilde gerçekleştirdikten sonra uygulamayı run edebilirsiniz.
+Maven, ilgili bağımlılıkları indirip derlemeyi başarılı bir şekilde gerçekleştirdikten sonra uygulamayı run edebilirsiniz. ```mvn spring-boot:run```
 
 
 # Postman Collection
