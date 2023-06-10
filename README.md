@@ -1,4 +1,4 @@
-# subscriber-study-case
+# In Memory Cache Management
 Bu proje abone(subscriber) bilgilerinin in memory cache üzerinde tutulup ilgili data manipulasyonlarının cache üzerinde gerçekleştirilmesini, cache üzerinde tutulan datanın belirli zaman aralıklarında kaydedilmesi ve uygulamanın kapatılması yada crash olması durumunda bu bilgilerin **data.json** dosyasına kaydedilmesini amaçlamaktadır. Uygulama **:8080** portunu dinlemektedir. Data dosyası(data.json) pathi, schedulera ait cron expression bilgisi ve logginge ait format düzenlemesi **application.yaml** dosyasından okunmaktadır.
 
 **Application.yaml**
