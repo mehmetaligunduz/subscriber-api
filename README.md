@@ -92,7 +92,7 @@ curl --location 'http://localhost:8080/getAllSubscribers' \
 
 # Nasıl Çalışır?
 
-+ Projeyi localinize indirin(```git clone https://github.com/mehmetaligunduz/subscriber-study-case.git```)
++ Projeyi localinize indirin(```git clone https://github.com/mehmetaligunduz/subscriber-api.git```)
 + Projeyi herhangi bir IDE(IntelliJ, Eclipse, NetBeans v.s.) ile açın IntelliJ tavsiye edilir.
 + ```mvn clean install``` komutunu terminal sekmesinden yada maven toolbardan çalıştırın. 
 
